@@ -1,16 +1,30 @@
-# ff
+# Diamond Price Prediction
 
-A new Flutter project.
+## Description
+This Flutter application predicts the price of a diamond based on its characteristics, such as carat, cut, color, clarity, depth, table, and dimensions.
 
-## Getting Started
+## Installation
+1. Clone the repository.
+2. Run `flutter pub get` to install dependencies.
 
-This project is a starting point for a Flutter application.
+## Usage
+1. Enter the diamond characteristics.
+2. Press the "Get price" button to predict the price.
+3. View the predicted price in an alert dialog.
 
-A few resources to get you started if this is your first Flutter project:
+## Example
+Enter the following diamond characteristics:
+- Carat: 0.5
+- Cut: Ideal
+- Color: D
+- Clarity: VS1
+- Depth: 61.5
+- Table: 55
+- X: 5.05
+- Y: 5.07
+- Z: 3.10
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Expected Price: $1707.47
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+Contributions are welcome! Please submit a pull request or open an issue for any suggestions or improvements.
