@@ -24,7 +24,7 @@ Enter the following diamond characteristics:
 - Y: 5.07
 - Z: 3.10
 
-Expected Price: $1707.47
+Expected Price: $1685.95
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for any suggestions or improvements.

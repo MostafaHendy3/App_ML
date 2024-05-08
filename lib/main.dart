@@ -11,36 +11,18 @@ class Main extends StatefulWidget {
 }
 
 class _MainState extends State<Main> {
-  double carat = 0;
-  String cut = "";
-  String color = "";
-  String clarity = "";
-  double depth = 0.0;
-  double table = 0.0;
-  double x = 0.0;
-  double y = 0.0;
-  double z = 0.0;
+  double carat =    0.0;
+  String cut =      "";
+  String color =    "";
+  String clarity =  "";
+  double depth =    0.0;
+  double table =    0.0;
+  double x =        0.0;
+  double y =        0.0;
+  double z =        0.0;
   String? selectedCut; // Variable to hold the selected value
   String? selectedColor; // Variable to hold the selected value
   String? selectedClarity; // Variable to hold the selected value
-
-  // Future<String?> predictPrice(var body) async {
-  // var uri = Uri.parse("https://mega.us-east-1.modelbit.com/v1/predictd/latest");
-  // var headers = {"Content-type": "application/json"};
-  // var jsonString = json.encode({"data": body});
-  // print(jsonString);
-  // try {
-  //   var response = await http.post(uri, headers: headers, body: jsonString);
-  //   print(response.body);
-  //   if (response.statusCode == 200) {
-  //     var result = json.decode(response.body);
-  //     return result["prediction"];
-  //   } else {
-  //     return "Error: ${response.statusCode}";
-  //   }
-  // } catch (e) {
-  //   return "Exception occurred: $e";
-  // }
   Future<String?> predictPrice(
       double carat,
       String cut,
@@ -52,7 +34,7 @@ class _MainState extends State<Main> {
       double y,
       double z) async {
     var uri =
-        Uri.parse("https://mega.us-east-1.modelbit.com/v1/predictd/latest");
+        Uri.parse("https://mega.us-east-1.modelbit.com/v1/predictedd/latest");
     var headers = {"Content-type": "application/json"};
     var jsonString = json.encode({
       "data": [carat, cut, color, clarity, depth, table, x, y, z]
@@ -64,7 +46,7 @@ class _MainState extends State<Main> {
       print(response.body);
       if (response.statusCode == 200) {
         var jsonResponse = json.decode(response.body);
-        var predictedPrice = jsonResponse['data'][0];
+        var predictedPrice = jsonResponse["data"][0];
         return predictedPrice.toString();
       } else {
         return "Error: ${response.statusCode}";
@@ -220,6 +202,7 @@ class _MainState extends State<Main> {
                     print(body);
                     var resp = await predictPrice(
                         carat, cut, color, clarity, depth, table, x, y, z);
+
                     _onBasicAlertPressed(context, resp);
                   },
                   child: Text("Get price"),
